@@ -39,17 +39,11 @@ def fix_paragraph(paragraph):
     return paragraph
 
 def fix_hebrew_rtl(content):
-    """Process content and add RTL markers to Hebrew paragraphs"""
-    # Split by double newlines (paragraphs)
-    if '\n\n' in content:
-        paragraphs = content.split('\n\n')
-        fixed = [fix_paragraph(p) for p in paragraphs]
-        return '\n\n'.join(fixed)
-    else:
-        # Single newline paragraphs
-        paragraphs = content.split('\n')
-        fixed = [fix_paragraph(p) for p in paragraphs]
-        return '\n'.join(fixed)
+    """Process content and add RTL markers to Hebrew lines"""
+    # Process each line individually
+    lines = content.split('\n')
+    fixed_lines = [fix_paragraph(line) for line in lines]
+    return '\n'.join(fixed_lines)
 
 def main():
     if len(sys.argv) < 2:
