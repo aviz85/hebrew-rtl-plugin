@@ -11,5 +11,18 @@
   "repository": "https://github.com/aviz85/hebrew-rtl-plugin",
   "license": "MIT",
   "keywords": ["hebrew", "rtl", "formatting", "automation", "text-processing"],
-  "hooks": "./hooks.json"
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/hebrew-rtl-fixer.py",
+            "args": ["$FILE_PATH"]
+          }
+        ]
+      }
+    ]
+  }
 }
