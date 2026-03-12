@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hebrew RTL Plugin - Installation Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+            font-weight: 500;
+        }
+
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+
+        .step {
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .example {
+            background: #f0f4ff;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        footer {
+            background: #f4f4f4;
+            padding: 30px 50px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hebrew RTL Plugin</h1>
+            <p>Automatic Right-to-Left Text Formatting for Claude Code</p>
+        </header>
+
+        <div class="content">
+            <h2>What Is This Plugin?</h2>
+            <p>The Hebrew RTL Plugin automatically adds Right-to-Left formatting markers to Hebrew text in your Claude Code editor. When you write in Hebrew, the plugin detects it and ensures proper display direction.</p>
+
+            <div class="success">
+                <strong>✓ Automatic:</strong> Works silently in the background after every write or edit
+                <br><strong>✓ Smart:</strong> Only affects Hebrew text, leaves English untouched
+                <br><strong>✓ Simple:</strong> No configuration needed—just install and forget
+            </div>
+
+            <h2>Quick Installation</h2>
+
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Clone the repository</strong>
+                <pre>git clone https://github.com/aviz85/hebrew-rtl-plugin.git
+cd hebrew-rtl-plugin</pre>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Install as a Claude Code plugin</strong>
+                <pre>claude plugin install . --scope user</pre>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Reload plugins</strong>
+                <p>In Claude Code, run:</p>
+                <pre>/reload-plugins</pre>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Verify installation</strong>
+                <p>Check that the plugin is active:</p>
+                <pre>/plugin</pre>
+                <p>You should see <code>hebrew-rtl</code> in the list of active plugins.</p>
+            </div>
+
+            <h2>How It Works</h2>
+
+            <h3>The Smart Detection</h3>
+            <p>The plugin uses intelligent paragraph analysis:</p>
+            <ul class="feature-list">
+                <li>Detects the first <strong>letter</strong> in each paragraph</li>
+                <li>Skips non-letter characters (numbers, punctuation, spaces)</li>
+                <li>Checks if that letter is Hebrew</li>
+                <li>Adds the RTL marker only if Hebrew text is found</li>
+            </ul>
+
+            <h3>Example Transformations</h3>
+
+            <div class="example">
+                <h4>Example 1: Numbered Hebrew Item</h4>
+                <strong>Before:</strong>
+                <pre>1. קטגוריה א</pre>
+                <strong>After (automatic):</strong>
+                <pre>‫1. קטגוריה א</pre>
+                <p>The RTL marker is added at the very beginning, before the "1".</p>
+            </div>
+
+            <div class="example">
+                <h4>Example 2: English Stays Unchanged</h4>
+                <strong>Before:</strong>
+                <pre>English paragraph with text</pre>
+                <strong>After (no change):</strong>
+                <pre>English paragraph with text</pre>
+                <p>English paragraphs are never modified.</p>
+            </div>
+
+            <h2>Architecture</h2>
+
+            <h3>Hook System</h3>
+            <p>The plugin uses Claude Code's <strong>hook</strong> system to automatically run after file writes:</p>
+
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td><code>PostToolUse</code> Hook</td>
+                    <td>Triggers after Write or Edit operations</td>
+                </tr>
+                <tr>
+                    <td><code>hebrew-rtl-fixer.py</code></td>
+                    <td>Python script that processes the file</td>
+                </tr>
+                <tr>
+                    <td><code>plugin.json</code></td>
+                    <td>Plugin metadata and configuration</td>
+                </tr>
+            </table>
+
+            <h3>File Structure</h3>
+            <pre>hebrew-rtl-plugin/
+├── .claude-plugin/
+│   └── plugin.json           # Plugin manifest
+├── hooks.json                # Hook definitions
+├── scripts/
+│   └── hebrew-rtl-fixer.py   # Main processing script
+├── docs/
+│   └── installation.html     # This file
+└── README.md                 # Full documentation</pre>
+
+            <h2>Troubleshooting</h2>
+
+            <h3>Plugin not working?</h3>
+            <div class="warning">
+                <strong>Check these:</strong>
+                <ol>
+                    <li>Is it installed? Run <code>/plugin</code> to see active plugins</li>
+                    <li>Reload plugins: Run <code>/reload-plugins</code></li>
+                    <li>Make sure script is executable: <code>chmod +x scripts/hebrew-rtl-fixer.py</code></li>
+                    <li>Enable debug mode: <code>claude --debug</code></li>
+                </ol>
+            </div>
+
+            <h3>Only affects some paragraphs?</h3>
+            <p>The plugin correctly identifies Hebrew by the first letter it finds. If a paragraph starts with non-letter characters, the plugin looks for the next letter to determine if it's Hebrew or English.</p>
+
+            <h2>Manual Installation</h2>
+
+            <p>If you prefer not to use the CLI:</p>
+
+            <div class="step">
+                <strong>1. Copy the plugin directory</strong>
+                <pre>cp -r hebrew-rtl-plugin ~/.claude/plugins/hebrew-rtl</pre>
+            </div>
+
+            <div class="step">
+                <strong>2. Make script executable</strong>
+                <pre>chmod +x ~/.claude/plugins/hebrew-rtl/scripts/hebrew-rtl-fixer.py</pre>
+            </div>
+
+            <div class="step">
+                <strong>3. Reload in Claude Code</strong>
+                <pre>/reload-plugins</pre>
+            </div>
+
+            <h2>For Developers</h2>
+
+            <h3>Testing the Plugin</h3>
+            <pre># Run Claude Code with the plugin
+claude --plugin-dir ./hebrew-rtl-plugin
+
+# Test the script directly
+python3 scripts/hebrew-rtl-fixer.py test-file.md</pre>
+
+            <h3>Modifying the Script</h3>
+            <p>The fixer script is in <code>scripts/hebrew-rtl-fixer.py</code>. It's a standalone Python 3 script that can be tested independently.</p>
+
+            <h2>Support & Contribution</h2>
+
+            <p>Found a bug? Have a suggestion? Open an issue on <a href="https://github.com/aviz85/hebrew-rtl-plugin" target="_blank">GitHub</a>.</p>
+
+            <div class="success">
+                <strong>Built by:</strong> Aviz
+                <br><strong>License:</strong> MIT
+                <br><strong>Repository:</strong> <a href="https://github.com/aviz85/hebrew-rtl-plugin" target="_blank">github.com/aviz85/hebrew-rtl-plugin</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Hebrew RTL Plugin • <a href="https://github.com/aviz85/hebrew-rtl-plugin">GitHub</a> • <a href="https://github.com/aviz85">Aviz</a></p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Automatic formatting for Hebrew text in Claude Code</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "hebrew-rtl",
+  "version": "1.0.0",
+  "description": "Automatically adds RTL (Right-to-Left) markers to Hebrew paragraphs for correct display in Claude Code",
+  "author": {
+    "name": "Aviz",
+    "email": "avizmaeir@gmail.com",
+    "url": "https://github.com/aviz85"
+  },
+  "homepage": "https://aviz85.github.io/hebrew-rtl-plugin/",
+  "repository": "https://github.com/aviz85/hebrew-rtl-plugin",
+  "license": "MIT",
+  "keywords": ["hebrew", "rtl", "formatting", "automation", "text-processing"],
+  "hooks": "./hooks.json"
+}
